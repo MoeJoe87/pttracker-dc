@@ -2,7 +2,7 @@ FROM ubuntu:16.04
 
 RUN apt-get update && apt-get install -y unzip wget && apt-get clean
 
-ARG PTTRACKER_VERSION=2.2.5
+ARG PTTRACKER_VERSION=2.2.6
 ENV PTTRACKER_VERSION ${PTTRACKER_VERSION}
 
 RUN mkdir -p /app
