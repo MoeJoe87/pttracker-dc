@@ -4,7 +4,7 @@ Clone from Jakkie! All credits go to Jakkie!
 
 Pt Tracker Docker
 
-Compatible with Pt Tracker version : v2.2.5
+Compatible with Pt Tracker version : v2.2.6
 `https://github.com/bTayFla/PtTracker/wiki`
 
 ## Install Docker
