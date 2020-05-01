@@ -26,7 +26,7 @@ Compatible with Pt Tracker version : v2.2.6
 - To Run Container and replace <your path> with the full path where the PtTracker.json file is.
 
 ```bash
-docker run -d -p 3000:3000 -v <your path>/PtTracker.json:/app/linux/PtTracker/PtTracker.json MoeJoe87/pttracker-dc
+docker run -d -p 3000:3000 -v <your path>/PtTracker.json:/app/linux/PtTracker/PtTracker.json moli87/pttracker-dc
 ```
 
 - After Pt Tracker is running browse to the url example `http://your-ip:3000`
