@@ -2,11 +2,18 @@
 version: '3'
 
 services:
-  pttracker:
-    build: .
-    container_name: pttracker
+  profittrailer:
+    image: moli87/pt-tracker-dc
+    container_name: pt-tracker
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Zurich
     volumes:
       - ./PtTracker.json:/app/linux/PtTracker/PtTracker.json
-    restart: always
+      - ./PtTracker.db:/app/linux/PtTracker/pttracker.db
+      - ./PtTracker.db-journal:/app/linux/PtTracker/pttracker.db-journal
+      - ./PtTracker.log:/app/linux/PtTracker/PtTracker.log
+    restart: unless-stopped
     ports:
       - "3000:3000"
