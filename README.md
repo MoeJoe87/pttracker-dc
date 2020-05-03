@@ -2,7 +2,7 @@
 
 This is a clone of Jakkie! All creedits to Jakkie!
 
-Donations to Jakkie are welcome `https://hub.docker.com/r/jakkie/profit-trailer-docker`
+Donations to Jakkie are welcome `https://hub.docker.com/r/jakkie/pttracker-docker`
 
 Pt Tracker Docker
 
