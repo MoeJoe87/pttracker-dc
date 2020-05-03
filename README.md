@@ -4,7 +4,7 @@ This is a clone of Jakkie! All creedits to Jakkie!
 
 Donations to Jakkie are welcome `https://hub.docker.com/r/jakkie/pttracker-docker`
 
-Pt Tracker Docker
+PT Tracker Docker
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/moli87/pt-tracker-dc.svg?label=pulls&logo=docker&logoColor=FFFFFF)](https://hub.docker.com/r/moli87/pt-tracker-dc/)
 [![Docker Stars](https://img.shields.io/docker/stars/moli87/pt-tracker-dc.svg?label=stars&logo=docker&logoColor=FFFFFF)](https://hub.docker.com/r/moli87/pt-tracker-dc/)
