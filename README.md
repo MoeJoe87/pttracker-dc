@@ -27,7 +27,7 @@ Compatible with Pt Tracker version : v2.2.6
 
 ### Run latest Pt Tracker version
 
-- download the configure file from `https://github.com/jakkie/pttracker-docker/blob/master/PtTracker.json`
+- download the configure file from `https://github.com/MoeJoe87/pttracker-dc/blob/master/PtTracker.json`
 
 - Edit your config in PtTracker.json. See for `https://github.com/bTayFla/PtTracker/wiki/Linux` reference.
 
