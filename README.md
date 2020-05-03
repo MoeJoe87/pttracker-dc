@@ -1,8 +1,16 @@
-# pttracker-docker
+# pttracker-dc
 
-Clone from Jakkie! All credits go to Jakkie!
+This is a clone of Jakkie! All creedits to Jakkie!
+
+Donations to Jakkie are welcome `https://hub.docker.com/r/jakkie/profit-trailer-docker`
 
 Pt Tracker Docker
+
+[![Docker Pulls](https://img.shields.io/docker/pulls/moli87/pt-tracker-dc.svg?label=pulls&logo=docker&logoColor=FFFFFF)](https://hub.docker.com/r/moli87/pt-tracker-dc/)
+[![Docker Stars](https://img.shields.io/docker/stars/moli87/pt-tracker-dc.svg?label=stars&logo=docker&logoColor=FFFFFF)](https://hub.docker.com/r/moli87/pt-tracker-dc/)
+[![](https://images.microbadger.com/badges/image/moli87/pt-tracker-dc.svg)](https://microbadger.com/images/moli87/pt-tracker-dc/ "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/version/moli87/pt-tracker-dc.svg)](https://microbadger.com/images/moli87/pt-tracker-dc/ "Get your own version badge on microbadger.com")
+[![Docker Build Status](https://img.shields.io/docker/cloud/build/moli87/pt-tracker-dc.svg?label=build&logo=docker&logoColor=FFFFFF)](https://hub.docker.com/r/moli87/pt-tracker-dc/)
 
 Compatible with Pt Tracker version : v2.2.6
 `https://github.com/bTayFla/PtTracker/wiki`
@@ -23,82 +31,60 @@ Compatible with Pt Tracker version : v2.2.6
 
 - Edit your config in PtTracker.json. See for `https://github.com/bTayFla/PtTracker/wiki/Linux` reference.
 
-- To Run Container and replace <your path> with the full path where the PtTracker.json file is.
+- To create Container just replace `/path/to/""`  with the full path where the PtTracker.json file is.
+
+### docker
 
 ```bash
-docker run -d -p 3000:3000 -v <your path>/PtTracker.json:/app/linux/PtTracker/PtTracker.json moli87/pttracker-dc
+docker create \
+  --name=pt-tracker \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -e TZ=Europe/Zurich \
+  -p 3000:3000 \
+  -v /path/to/PtTracker.json:/app/linux/PtTracker/PtTracker.json \
+  -v /path/to/PtTracker.db:/app/linux/PtTracker/pttracker.db \
+  -v /path/to/PtTracker.db-journal:/app/linux/PtTracker/pttracker.db-journal \
+  -v /path/to/PtTracker.log:/app/linux/PtTracker/PtTracker.log \
+  --restart unless-stopped \
+  moli87/pt-tracker-dc
 ```
 
-- After Pt Tracker is running browse to the url example `http://your-ip:3000`
+### docker-compose
+
+Compatible with docker-compose v3 schemas
 
 ```bash
-http://localhost:3000
+---
+version: '3'
+
+services:
+  profittrailer:
+    image: moli87/pt-tracker-dc
+    container_name: pt-tracker
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Zurich
+    volumes:
+      - ./PtTracker.json:/app/linux/PtTracker/PtTracker.json
+      - ./PtTracker.db:/app/linux/PtTracker/pttracker.db
+      - ./PtTracker.db-journal:/app/linux/PtTracker/pttracker.db-journal
+      - ./PtTracker.log:/app/linux/PtTracker/PtTracker.log
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
 ```
+If you like it, support appreciated!
 
-## DIY Guide
+BTC: 17cqx7P6aRn9egZfSkzbyNqKjd3Xm6W9T4
 
-### Installing the container
+BCH: qq020gjmrd83rfaut4fzrncc8ejlv32q4yuhnzgc5c
 
-- Build the container from the Dockerfile.
+BNB: bnb1m6fn76pplwf3pwem62ghcpryruu0kmnmrmsq22
 
-```bash
-docker build -t pttracker .
-```
+ETH: 0x4B2895914147787d0C15868F86c460aF6Fb45D91
 
-- To build with a specific Pt Tracker version from version v2.2.5 and later. Just change the Pt Tracker version to the version you want. To see which versions are available go to `https://github.com/bTayFla/PtTracker/releases`
+LTC: LbvRzuBrF4eVrEC2zkHveQAxEyfaNBAa3j
 
-```bash
-docker build -t pttracker --build-arg PTTRACKER_VERSION=2.2.5 .
-```
-
-### Running Pt Tracker with docker-compose
-
-- To install docker compose see `https://docs.docker.com/compose/install/`
-
-- Copy PtTracker.json to where your docker-compose file is.
-
-- To start docker-compose to run the container.
-
-```bash
-docker-compose up -d
-```
-
-- After Pt Tracker is running check the Pt Tracker logs.
-
-```bash
-docker logs pttracker
-```
-
-### Upgrade to new version
-
-- To upgrade to the latest Pt Tracker bot version, pull the latest version from docker hub.
-
-```bash
-docker-compose pull
-```
-
-- Stop and remove container.
-
-```bash
-docker-compose down
-```
-
-- Run it again.
-
-```bash
-docker-compose up -d
-```
-
-Tip jar, support appreciated!
-
-BTC: 1JvpPGe22ViBYNiNrA3nwtg71Jta5vqXAi
-
-BCH: qzndnssc368k5h5ndg6h2d5pewmkycd50c9gxcpre6
-
-LTC: LWRDbKva26cATarA2PoTXTpKVJwCRCzbNC
-
-ETH: 0x13346b1DcF1f923bD357a1C8900C4475342e5255
-
-ZEC: t1YgFzgYdRymwJcwTBaS1harBf1sPakgbZ4
-
-DASH: XanACebtJkEZsfRaMahbnqCU4LPt42e3mE
+XMR: 45sS3GEkui1LosH14zvnvwChqEy8sK4pJXWAax1VvSD9BSN9qUsAuzsVwoTrvMjFndS9LpYpGBpCwY9JxifzxAW16wWsAAY
