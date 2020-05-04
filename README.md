@@ -12,6 +12,8 @@ PT Tracker Docker
 [![](https://images.microbadger.com/badges/version/moli87/pt-tracker-dc.svg)](https://microbadger.com/images/moli87/pt-tracker-dc/ "Get your own version badge on microbadger.com")
 [![Docker Build Status](https://img.shields.io/docker/cloud/build/moli87/pt-tracker-dc.svg?label=build&logo=docker&logoColor=FFFFFF)](https://hub.docker.com/r/moli87/pt-tracker-dc/)
 
+Note: This is an addon for Profit Trailer
+
 Compatible with Pt Tracker version : v2.2.6
 `https://github.com/bTayFla/PtTracker/wiki`
 
